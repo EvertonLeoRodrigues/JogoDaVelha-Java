@@ -1,11 +1,13 @@
 
 import classes.*;
-
+import java.io.*;
 import java.util.Scanner;
 
 class App {
     
     public static void main(String[] args) throws Exception {
+        Player winner;
+
         while (true) {
             Scanner sc = new Scanner(System.in);
 
@@ -72,11 +74,18 @@ class App {
             System.out.println("Do you want go again? (s/n)");
             String answer = sc.next();
             if (!answer.equalsIgnoreCase("s")) {
+                if (playerOne.getScore()>playerTwo.getScore()) {
+                    winner = playerOne;
+                }else{
+                    winner = playerTwo;
+                }
+
+                File f = new File("Result.txt");
+                FileWriter fr = new FileWriter(f);
+                PrintWriter out = new PrintWriter(fr);
+                out.println("Winner: "+winner.toString());
                 break;
             }
         }
-
-        
-
     }
 }
