@@ -45,7 +45,7 @@ class App {
                     System.out.print("COL: ");
                     col = sc.nextInt();
 
-                } while (!board.makeAMove(row, col, player1Turn? 'x':'O'));
+                } while (!board.makeAMove(row, col, player1Turn? playerOne.getSymbol():playerTwo.getSymbol()));
             
                 System.out.println();
                 System.out.println(board);

@@ -19,6 +19,7 @@ public class Player {
         this.name = name;
     }
 
+
     public int getScore() {
         return score;
     }
@@ -30,6 +31,14 @@ public class Player {
     @Override
     public String toString() {
         return "Player [name=" + name + ", score=" + score + "]";
+    }
+
+    public char getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
     }
 
     
